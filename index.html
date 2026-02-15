@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>♥ para mi amorcito ♥</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ff66b2;
+            background-image: 
+                url('https://i.gifer.com/origin/0a/0aea584636ef77fd8fe60ab650dbc51f_w200.gif'),
+                url('https://64.media.tumblr.com/9a5bc0e9fbcf8f9ea98ac5d1b1a77e1d/tumblr_inline_p7n128qJXC1r4hkfd_500.gifv'),
+                repeating-linear-gradient(
+                    0deg,
+                    #ff66b2 0px,
+                    #ff99cc 2px,
+                    #ff66b2 4px
+                );
+            background-size: 100px 100px, 150px 150px, 4px 4px;
+            background-position: 0 0, 50px 50px, 0 0;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Floating sparkles and hearts */
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .sparkle1 {
+            top: 10%;
+            left: 5%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .sparkle2 {
+            top: 20%;
+            right: 8%;
+            animation: float 7s ease-in-out infinite 1s;
+        }
+
+        .sparkle3 {
+            bottom: 15%;
+            left: 10%;
+            animation: float 5s ease-in-out infinite 2s;
+        }
+
+        .sparkle4 {
+            bottom: 25%;
+            right: 5%;
+            animation: float 8s ease-in-out infinite 0.5s;
+        }
+
+        .sparkle5 {
+            top: 50%;
+            left: 2%;
+            animation: float 6.5s ease-in-out infinite 1.5s;
+        }
+
+        .sparkle6 {
+            top: 60%;
+            right: 3%;
+            animation: float 7.5s ease-in-out infinite 2.5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        /* Main container */
+        .container {
+            position: relative;
+            max-width: 700px;
+            width: 100%;
+            z-index: 10;
+        }
+
+        /* Top decoration */
+        .top-decoration {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Main content box */
+        .content-box {
+            background: #fff;
+            border: 5px solid #ff1493;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .inner-box {
+            background: #ffe6f0;
+            border: 3px dotted #ff69b4;
+            border-radius: 10px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .inner-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 105, 180, 0.05) 10px,
+                rgba(255, 105, 180, 0.05) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        /* Title styling */
+        .post-title {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: 3em;
+            text-align: center;
+            color: #ff1493;
+            text-shadow: 
+                2px 2px 0px #fff,
+                3px 3px 0px #ff69b4,
+                4px 4px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            animation: titleBounce 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleBounce {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Hearts decoration */
+        .hearts-line {
+            text-align: center;
+            font-size: 2em;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hearts-line span {
+            display: inline-block;
+            animation: heartBeat 1s ease-in-out infinite;
+        }
+
+        .hearts-line span:nth-child(1) { animation-delay: 0s; color: #ff1493; }
+        .hearts-line span:nth-child(2) { animation-delay: 0.2s; color: #ff69b4; }
+        .hearts-line span:nth-child(3) { animation-delay: 0.4s; color: #ff00ff; }
+        .hearts-line span:nth-child(4) { animation-delay: 0.6s; color: #ff1493; }
+        .hearts-line span:nth-child(5) { animation-delay: 0.8s; color: #ff69b4; }
+
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
+        /* Poem styling */
+        .poem-container {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .poem-text {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #cc0066;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .poem-author {
+            font-size: 1.1em;
+            color: #ff1493;
+            text-align: right;
+            margin-top: 20px;
+            font-style: italic;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Corner decorations */
+        .corner-gif {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            z-index: 2;
+        }
+
+        .corner-gif.top-left {
+            top: -10px;
+            left: -10px;
+        }
+
+        .corner-gif.top-right {
+            top: -10px;
+            right: -10px;
+        }
+
+        .corner-gif.bottom-left {
+            bottom: -10px;
+            left: -10px;
+        }
+
+        .corner-gif.bottom-right {
+            bottom: -10px;
+            right: -10px;
+        }
+
+        /* Blinking stars */
+        .blink {
+            animation: blink 1s linear infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% {
+                opacity: 1;
+            }
+            50%, 100% {
+                opacity: 0;
+            }
+        }
+
+        /* Bottom decoration */
+        .bottom-decoration {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .post-title {
+                font-size: 2em;
+            }
+            
+            .poem-text {
+                font-size: 1.1em;
+            }
+
+            .corner-gif {
+                width: 60px;
+                height: 60px;
+            }
+
+            .sparkle img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* Additional decorative elements */
+        .divider {
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff69b4, #ff1493, #ff69b4, transparent);
+            margin: 20px auto;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating decorations -->
+    <div class="sparkle sparkle1">
+        <img src="https://gifgifs.com/animations/animals/dinosaurs/t-rex.gif" alt="sparkle" width="80" height="80">
+    </div>
+    <div class="sparkle sparkle2">
+        <img src="https://gifgifs.com/animations/animals/dinosaurs/t-rex.gif" alt="sparkle" width="80" height="80">
+    </div>
+    <div class="sparkle sparkle3">
+        <img src="https://media.tenor.com/jwim7U-E7bkAAAAj/rat-spinning.gif" alt="heart" width="100" height="100">
+    </div>
+    <div class="sparkle sparkle4">
+        <img src="https://media.tenor.com/jwim7U-E7bkAAAAj/rat-spinning.gif" alt="heart" width="100" height="100">
+    </div>
+    <div class="sparkle sparkle5">
+        <img src="https://gifgifs.com/animations/animals/dinosaurs/t-rex.gif" alt="star" width="70" height="70">
+    </div>
+    <div class="sparkle sparkle6">
+        <img src="https://gifgifs.com/animations/animals/dinosaurs/t-rex.gif" alt="star" width="70" height="70">
+    </div>
+
+    <!-- Main container -->
+    <div class="container">
+
+        <!-- Main content box -->
+        <div class="content-box">
+            <!-- Corner decorations -->
+            <img src="https://i.pinimg.com/originals/38/a4/69/38a469ce87cd9702d0bea43478ad4df0.gif" alt="corner" class="corner-gif top-left">
+            <img src="https://i.pinimg.com/originals/38/a4/69/38a469ce87cd9702d0bea43478ad4df0.gif" alt="corner" class="corner-gif top-right">
+            <img src="https://i.pinimg.com/originals/38/a4/69/38a469ce87cd9702d0bea43478ad4df0.gif" alt="corner" class="corner-gif bottom-left">
+            <img src="https://i.pinimg.com/originals/38/a4/69/38a469ce87cd9702d0bea43478ad4df0.gif" alt="corner" class="corner-gif bottom-right">
+
+            <div class="inner-box">
+                <!-- Title -->
+                <h1 class="post-title">
+                    <span class="blink">★</span> para mi amorcito <span class="blink">★</span>
+                </h1>
+
+                <!-- Hearts line -->
+                <div class="hearts-line">
+                    <span>♥</span>
+                    <span>♥</span>
+                    <span>♥</span>
+                    <span>♥</span>
+                    <span>♥</span>
+                </div>
+
+                <!-- Divider -->
+                <div class="divider"></div>
+
+                <!-- Poem -->
+                <div class="poem-container">
+                    <div class="poem-text">
+                        Sabés<br><br>
+                        
+                        Sabés<br>
+                        dijiste<br>
+                        nunca<br>
+                        nunca fui tan feliz como esta noche.<br>
+                        Nunca. Y me lo dijiste<br>
+                        en el mismo momento<br>
+                        en que yo decidía no decirte<br>
+                        sabés<br>
+                        seguramente me engaño<br>
+                        pero creo<br>
+                        pero esta me parece<br>
+                        la noche más hermosa de mi vida
+                    </div>
+                    <div class="poem-author">
+                        -Idea Vilariño
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="divider"></div>
+
+                <!-- Hearts line -->
+                <div class="hearts-line">
+                    <span>♥</span>
+                    <span>♥</span>
+                    <span>♥</span>
+                    <span>♥</span>
+                    <span>♥</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
